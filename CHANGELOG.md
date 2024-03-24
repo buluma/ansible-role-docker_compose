@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-docker_compose/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-docker_compose/compare/v0.1.0...HEAD)
+
+**Merged pull requests:**
+
+- Update 24 [\#5](https://github.com/buluma/ansible-role-docker_compose/pull/5) ([buluma](https://github.com/buluma))
+
 ## [v0.1.0](https://github.com/buluma/ansible-role-docker_compose/tree/v0.1.0) (2024-02-03)
 
 [Full Changelog](https://github.com/buluma/ansible-role-docker_compose/compare/2efaaa48eda34c77461ff811a0c758fe9e370b2a...v0.1.0)
