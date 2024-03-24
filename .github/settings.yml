@@ -3,6 +3,6 @@
 # Ansible managed
 #
 repository:
-  description: Install docker_compose on your system.
+  description: Install docker_compose.
   homepage: https://buluma.github.io/
   topics: docker, dockercompose, compose, ansible, molecule, tox, playbook

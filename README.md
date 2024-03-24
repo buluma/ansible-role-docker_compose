@@ -1,6 +1,6 @@
 # Ansible role [docker_compose](https://galaxy.ansible.com/ui/standalone/roles/buluma/docker_compose/documentation)
 
-Install docker_compose on your system.
+Install docker_compose.
 
 |GitHub|Version|Issues|Pull Requests|Downloads|
 |------|-------|------|-------------|---------|
