@@ -1,6 +1,6 @@
 # Ansible role [docker_compose](https://galaxy.ansible.com/ui/standalone/roles/buluma/docker_compose/documentation)
 
-Install docker_compose on your system.
+Install docker_compose.
 
 |GitHub|Version|Issues|Pull Requests|Downloads|
 |------|-------|------|-------------|---------|
@@ -85,6 +85,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |container|tags|
 |---------|----|
 |[Alpine](https://hub.docker.com/repository/docker/buluma/alpine/general)|all|
+|[Amazon](https://hub.docker.com/repository/docker/buluma/amazonlinux/general)|Candidate|
 |[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|8, 9|
 |[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|all|
 |[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
