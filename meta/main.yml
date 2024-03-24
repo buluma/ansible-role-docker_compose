@@ -2,7 +2,7 @@
 galaxy_info:
   author: buluma
   role_name: docker_compose
-  description: Install docker_compose on your system.
+  description: Install docker_compose.
   license: Apache-2.0
   company: ShadowNet
   min_ansible_version: "2.12"
@@ -11,6 +11,9 @@ galaxy_info:
     - name: Alpine
       versions:
         - all
+    - name: Amazon
+      versions:
+        - Candidate
     - name: EL
       versions:
         - "8"
