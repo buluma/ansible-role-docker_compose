@@ -5,4 +5,4 @@
 repository:
   description: Install docker_compose.
   homepage: https://buluma.github.io/
-  topics: docker, dockercompose, compose, ansible, molecule, tox, playbook
+  topics: docker, dockercompose, compose, ansible, molecule, playbook
