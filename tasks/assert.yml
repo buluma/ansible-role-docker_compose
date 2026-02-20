@@ -1,5 +1,4 @@
 ---
-
 - name: assert | Test docker_compose_version
   ansible.builtin.assert:
     that:
