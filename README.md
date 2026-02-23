@@ -12,29 +12,31 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-- name: Converge
-  hosts: all
-  become: yes
-  gather_facts: yes
+  - name: Converge
+    hosts: all
+    become: yes
+    gather_facts: yes
 
-  vars:
-    docker_compose_url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ ansible_system | lower }}-{{ docker_compose_architecture }}"
+    vars:
+      docker_compose_url: "https://github.com/docker/compose/releases/download/{{
+        docker_compose_version }}/docker-compose-{{ ansible_system | lower }}-{{ docker_compose_architecture
+        }}"
 
-  roles:
-    - role: buluma.docker_compose
+    roles:
+      - role: buluma.docker_compose
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-docker_compose/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-- name: Prepare
-  hosts: all
-  become: yes
-  gather_facts: no
+  - name: Prepare
+    hosts: all
+    become: yes
+    gather_facts: no
 
-  roles:
-    - role: buluma.bootstrap
+    roles:
+      - role: buluma.bootstrap
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -55,8 +57,8 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 docker_compose_version: "v2.24.1"
 
 # Where to download the docker binary from.
-docker_compose_url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ ansible_system | lower }}-{{ docker_compose_architecture
-  }}"
+docker_compose_url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version
+  }}/docker-compose-{{ ansible_system | lower }}-{{ docker_compose_architecture }}"
 ```
 
 ## [Requirements](#requirements)
