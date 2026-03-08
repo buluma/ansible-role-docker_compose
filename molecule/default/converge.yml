@@ -5,9 +5,10 @@
   gather_facts: yes
 
   vars:
-    docker_compose_url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version
+    docker_compose_url:
+      "https://github.com/docker/compose/releases/download/{{ docker_compose_version
       }}/docker-compose-{{ ansible_system | lower }}-{{ docker_compose_architecture
       }}"
 
   roles:
-  - role: buluma.docker_compose
+    - role: buluma.docker_compose
