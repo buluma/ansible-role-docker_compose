@@ -12,6 +12,10 @@ docker_compose_architecture: "{{ _docker_compose_architecture[ansible_facts['arc
 _docker_compose_installation_type:
   default: package
   Amazon: binary
+  Debian:
+    default: package
+    "24": binary
+    "13": binary
   RedHat:
     default: package
     "8": binary
