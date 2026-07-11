@@ -14,13 +14,13 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 ---
 - name: Converge
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
 
   vars:
     docker_compose_url:
       "https://github.com/docker/compose/releases/download/{{ docker_compose_version
-      }}/docker-compose-{{ ansible_system | lower }}-{{ docker_compose_architecture
+      }}/docker-compose-{{ ansible_facts['system'] | lower }}-{{ docker_compose_architecture
       }}"
 
   roles:
@@ -33,11 +33,19 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
+
+  pre_tasks:
+    - name: Install sudo if missing
+      ansible.builtin.raw: "{{ ansible_pkg_mgr | default('dnf') }} install -y sudo"
+      become: false
+      changed_when: false
+      failed_when: false
 
   roles:
     - role: buluma.bootstrap
+    - role: buluma.ca_certificates
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -59,7 +67,7 @@ docker_compose_version: "v2.24.1"
 
 # Where to download the docker binary from.
 docker_compose_url:
-  "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ ansible_system | lower }}-{{ docker_compose_architecture
+  "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ ansible_facts['system'] | lower }}-{{ docker_compose_architecture
   }}"
 ```
 
@@ -74,6 +82,7 @@ The following roles are used to prepare a system. You can prepare your system in
 | Requirement | GitHub |
 |-------------|--------|
 |[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|
+|[buluma.ca_certificates](https://galaxy.ansible.com/buluma/ca_certificates)|[![Build Status GitHub](https://github.com/buluma/ansible-role-ca_certificates/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-ca_certificates/actions)|
 
 ## [Context](#context)
 
@@ -85,15 +94,14 @@ Here is an overview of related roles:
 
 ## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
 
 |container|tags|
 |---------|----|
-|[Alpine](https://hub.docker.com/r/robertdebock/alpine)|all|
-|[EL](https://hub.docker.com/r/robertdebock/enterpriselinux)|all|
-|[Debian](https://hub.docker.com/r/robertdebock/debian)|all|
-|[Fedora](https://hub.docker.com/r/robertdebock/fedora)|all|
-|[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|
+|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Debian](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Fedora](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Ubuntu](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
 
 The minimum version of Ansible required is 2.12, tests have been done on:
 
@@ -111,6 +119,3 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 
 [buluma](https://buluma.github.io/)
 
-### Get Help
-- Report issues: https://github.com/buluma/ansible-role-docker_compose/issues/new
-- See docs: https://docs.ansible.com/collection/gallery/ansible-role-docker_compose
