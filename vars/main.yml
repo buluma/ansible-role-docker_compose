@@ -20,6 +20,7 @@ _docker_compose_installation_type:
     default: package
     "8": binary
     "9": binary
+    "10": binary
     "2023": binary # Amazonlinux 2
 docker_compose_installation_type: "{{ _docker_compose_installation_type[ansible_facts['os_family']][ansible_facts['distribution_major_version']] | default(_docker_compose_installation_type[ansible_facts['os_family']]['default'])
   | default(_docker_compose_installation_type[ansible_facts['distribution']]) | default(_docker_compose_installation_type['default']) }}"
