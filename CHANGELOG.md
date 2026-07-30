@@ -1,5 +1,13 @@
 # Changelog
 
+## [v26.7.0](https://github.com/buluma/ansible-role-docker_compose/tree/v26.7.0) (2026-07-23)
+
+[Full Changelog](https://github.com/buluma/ansible-role-docker_compose/compare/v26.6.1...v26.7.0)
+
+## [v26.6.1](https://github.com/buluma/ansible-role-docker_compose/tree/v26.6.1) (2026-07-23)
+
+[Full Changelog](https://github.com/buluma/ansible-role-docker_compose/compare/v26.6.0...v26.6.1)
+
 ## [v26.6.0](https://github.com/buluma/ansible-role-docker_compose/tree/v26.6.0) (2026-06-14)
 
 [Full Changelog](https://github.com/buluma/ansible-role-docker_compose/compare/v24.03.24...v26.6.0)
