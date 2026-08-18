@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-docker_compose/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-docker_compose/compare/v26.7.0...HEAD)
+
+**Merged pull requests:**
+
+- Bump ansible/ansible-lint from 26.6.0 to 26.8.0 [\#9](https://github.com/buluma/ansible-role-docker_compose/pull/9) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v26.7.0](https://github.com/buluma/ansible-role-docker_compose/tree/v26.7.0) (2026-07-23)
 
 [Full Changelog](https://github.com/buluma/ansible-role-docker_compose/compare/v26.6.1...v26.7.0)
