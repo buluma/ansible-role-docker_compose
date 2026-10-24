@@ -82,10 +82,10 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 
 # The version of Docker compose to install.
 # The versions `1.*` do not start with a `v`.
-# The versions `2.*` do start with a `v`.
+# The versions `2.*` and later start with a `v`.
 # You can check available versions here:
 # https://github.com/docker/compose/releases
-docker_compose_version: "v2.24.1"
+docker_compose_version: "v5.6.1"
 
 # Where to download the docker binary from.
 docker_compose_url: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ ansible_facts['system'] | lower }}-{{ docker_compose_architecture
